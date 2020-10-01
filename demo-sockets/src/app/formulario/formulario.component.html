@@ -1,0 +1,57 @@
+<div class="titulo">SiERUMP</div>
+<div class="info-formulario">
+    <span>Recepción: <b>{{ horaRecepcion }}</b> {{ fechaRecepcion | date:'dd/MM/yyyy'  }} </span>
+    <span class="folio">Folio: {{ folio }}</span>
+    <span>{{ tiempoAcumulado }}</span>
+</div>
+
+<form class="contenedor-formulario" [formGroup]="SiERUMP_Fomulario">
+    <div class="carta">
+        <div class="titulo-carta">solicita apoyo</div>
+
+        <div class="botones">
+            <label class="boton-fomulario" for="solicitaApoyo_c4"
+                [ngClass]="{'boton-seleccionado': SiERUMP_Fomulario.value.solicitaApoyo === 'c4'}">
+                c4
+                <input type="radio" id="solicitaApoyo_c4" formControlName="solicitaApoyo" name="solicitaApoyo"
+                    value="c4">
+            </label>
+            <label class="boton-fomulario" for="solicitaApoyo_otros"
+                [ngClass]="{'boton-seleccionado': SiERUMP_Fomulario.value.solicitaApoyo === 'otros'}">
+                otros
+                <input type="radio" formControlName="solicitaApoyo" name="solicitaApoyo" id="solicitaApoyo_otros"
+                    value="otros">
+            </label>
+        </div>
+
+        <mat-form-field class="input-otros" *ngIf="SiERUMP_Fomulario.value.solicitaApoyo === 'otros'">
+            <mat-label>CRUM nacional</mat-label>
+            <input matInput type="text" formControlName="nombreApoyo">
+        </mat-form-field>
+
+        <div class="editado-por">Editado por:</div>
+    </div>
+    <div class="carta">
+        <div class="titulo-carta">esena segura</div>
+
+        <div class="botones">
+            <label class="boton-fomulario" for="esenaSegura_si"
+                [ngClass]="{'boton-seleccionado': SiERUMP_Fomulario.value.esenaSegura === 'si'}">
+                si
+                <input type="radio" id="esenaSegura_si" formControlName="esenaSegura" name="esenaSegura"
+                    value="si">
+            </label>
+            <label class="boton-fomulario" for="esenaSegura_no"
+                [ngClass]="{'boton-seleccionado': SiERUMP_Fomulario.value.esenaSegura === 'no'}">
+                no
+                <input type="radio" formControlName="esenaSegura" name="esenaSegura" id="esenaSegura_no"
+                    value="no">
+            </label>
+        </div>
+    </div>
+    <div class="carta"></div>
+    <div class="carta"></div>
+    <div class="carta"></div>
+    <div class="carta"></div>
+    <div class="carta"></div>
+</form>
