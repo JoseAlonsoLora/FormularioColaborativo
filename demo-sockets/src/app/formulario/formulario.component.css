@@ -93,3 +93,12 @@
     left: 35%;
     margin-bottom: 1em;
 }
+
+.inputs-datos-paciente{
+    display: flex;
+    gap: 1em;
+}
+
+.inputs-datos-paciente .mat-form-field{
+    width: 135px;
+}

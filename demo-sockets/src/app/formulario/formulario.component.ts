@@ -14,7 +14,8 @@ import { Formulario } from '../models/Formulario';
 })
 export class FormularioComponent implements OnInit {
 
-  private nombresPreguntas = ['solicitaApoyo','nombreApoyo', 'esenaSegura'];
+  private nombresPreguntas = ['solicitaApoyo','nombreApoyo', 'esenaSegura','procedencia', 'nombrePaciente',
+    'edadPaciente','generoPaciente'];
 
   horaRecepcion: string;
   folio: string;
@@ -26,7 +27,11 @@ export class FormularioComponent implements OnInit {
   SiERUMP_Fomulario = new FormGroup({
     solicitaApoyo: new FormControl('c4'),
     nombreApoyo: new FormControl(''),
-    esenaSegura: new FormControl('si')
+    esenaSegura: new FormControl('si'),
+    procedencia: new FormControl(),
+    nombrePaciente: new FormControl(),
+    edadPaciente: new FormControl(),
+    generoPaciente: new FormControl(),
   });
 
 

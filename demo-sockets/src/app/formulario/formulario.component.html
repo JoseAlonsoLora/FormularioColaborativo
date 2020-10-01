@@ -32,25 +32,61 @@
         <div class="editado-por">Editado por:</div>
     </div>
     <div class="carta">
-        <div class="titulo-carta">esena segura</div>
+        <div class="titulo-carta">escena segura</div>
 
         <div class="botones">
             <label class="boton-fomulario" for="esenaSegura_si"
                 [ngClass]="{'boton-seleccionado': SiERUMP_Fomulario.value.esenaSegura === 'si'}">
                 si
-                <input type="radio" id="esenaSegura_si" formControlName="esenaSegura" name="esenaSegura"
-                    value="si">
+                <input type="radio" id="esenaSegura_si" formControlName="esenaSegura" name="esenaSegura" value="si">
             </label>
             <label class="boton-fomulario" for="esenaSegura_no"
                 [ngClass]="{'boton-seleccionado': SiERUMP_Fomulario.value.esenaSegura === 'no'}">
                 no
-                <input type="radio" formControlName="esenaSegura" name="esenaSegura" id="esenaSegura_no"
-                    value="no">
+                <input type="radio" formControlName="esenaSegura" name="esenaSegura" id="esenaSegura_no" value="no">
             </label>
         </div>
     </div>
-    <div class="carta"></div>
-    <div class="carta"></div>
+    <div class="carta">
+        <div class="titulo-carta">procedencia</div>
+
+        <mat-form-field>
+            <mat-select formControlName="procedencia">
+                <mat-option value="xalapa">
+                    XALAPA
+                </mat-option>
+                <mat-option value="veracruz">
+                    VERACRUZ
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="carta">
+        <div class="titulo-carta">datos del paciente</div>
+
+
+        <mat-form-field class="input-otros">
+            <mat-label>Nombre paciente</mat-label>
+            <input matInput type="text" formControlName="nombrePaciente">
+        </mat-form-field>
+        <div class="inputs-datos-paciente">
+            <mat-form-field>
+                <mat-label>Edad</mat-label>
+                <input matInput type="number" formControlName="edadPaciente">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Sexo</mat-label>
+                <mat-select formControlName="generoPaciente">
+                    <mat-option value="masculino">
+                        MASCULINO
+                    </mat-option>
+                    <mat-option value="femenino">
+                        FEMENINO
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
     <div class="carta"></div>
     <div class="carta"></div>
     <div class="carta"></div>
